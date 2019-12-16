@@ -21,10 +21,12 @@ class ViewController: UIViewController {
     }
     
     func searchShows(searchQuery: String) {
-        let showData = ShowSearchAPI.fetchShow(searchQuery: searchQuery, completion: { [weak self] (result) in
+        ShowSearchAPI.fetchShow(searchQuery: searchQuery, completion: { [weak self] (result) in
             switch result {
             case .failure(let appError):
-                
+                self?.showAlert(title: "Error: Could not read data", message: "\(appError)")
+            case .success(let shows):
+                self?.shows = shows
             }
             
         })
