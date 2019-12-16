@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="196" width="414" height="700"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="236" id="lRe-3L-rEE">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="showCell" rowHeight="236" id="lRe-3L-rEE" customClass="ShowCell" customModule="Pursuit_Core_iOS_Episodes_from_Online" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="236"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lRe-3L-rEE" id="0Sc-cG-FlL">
@@ -54,6 +54,8 @@
                                             <constraint firstItem="ftC-gg-wfV" firstAttribute="width" secondItem="lRe-3L-rEE" secondAttribute="width" multiplier="0.5" id="e6T-Bj-Uqi"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="showView" destination="ftC-gg-wfV" id="4ET-Ke-cfm"/>
+                                            <outlet property="titleLabel" destination="712-Ny-KL5" id="oNI-ss-OhS"/>
                                             <segue destination="zsw-9Y-x4T" kind="show" id="arw-gu-KBA"/>
                                         </connections>
                                     </tableViewCell>

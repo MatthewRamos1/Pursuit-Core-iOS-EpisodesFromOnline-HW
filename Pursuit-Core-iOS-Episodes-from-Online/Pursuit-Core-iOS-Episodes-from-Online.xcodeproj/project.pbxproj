@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		0C545C2E23A708B2002A970D /* ShowCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C545C2D23A708B2002A970D /* ShowCell.swift */; };
+		0C545C3023A72443002A970D /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C545C2F23A72443002A970D /* Show.swift */; };
+		0C545C3223A7255B002A970D /* NetworkHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C545C3123A7255B002A970D /* NetworkHelper.swift */; };
+		0C545C3423A725A1002A970D /* AppError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C545C3323A725A1002A970D /* AppError.swift */; };
+		0C545C3723A726BB002A970D /* ShowSearchAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C545C3623A726BB002A970D /* ShowSearchAPI.swift */; };
 		CD01CD5C232178AF002D0255 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CD5B232178AF002D0255 /* AppDelegate.swift */; };
 		CD01CD5E232178AF002D0255 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD01CD5D232178AF002D0255 /* ViewController.swift */; };
 		CD01CD61232178AF002D0255 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD01CD5F232178AF002D0255 /* Main.storyboard */; };
@@ -28,6 +32,10 @@
 
 /* Begin PBXFileReference section */
 		0C545C2D23A708B2002A970D /* ShowCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowCell.swift; sourceTree = "<group>"; };
+		0C545C2F23A72443002A970D /* Show.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
+		0C545C3123A7255B002A970D /* NetworkHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkHelper.swift; sourceTree = "<group>"; };
+		0C545C3323A725A1002A970D /* AppError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppError.swift; sourceTree = "<group>"; };
+		0C545C3623A726BB002A970D /* ShowSearchAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowSearchAPI.swift; sourceTree = "<group>"; };
 		CD01CD58232178AF002D0255 /* Pursuit-Core-iOS-Episodes-from-Online.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pursuit-Core-iOS-Episodes-from-Online.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD01CD5B232178AF002D0255 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CD01CD5D232178AF002D0255 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,10 +66,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0C545C3523A725C4002A970D /* Network-Services */ = {
+			isa = PBXGroup;
+			children = (
+				0C545C3123A7255B002A970D /* NetworkHelper.swift */,
+				0C545C3323A725A1002A970D /* AppError.swift */,
+				0C545C3623A726BB002A970D /* ShowSearchAPI.swift */,
+			);
+			path = "Network-Services";
+			sourceTree = "<group>";
+		};
 		CD01CD4F232178AF002D0255 = {
 			isa = PBXGroup;
 			children = (
 				CD01CD5A232178AF002D0255 /* Pursuit-Core-iOS-Episodes-from-Online */,
+				0C545C3523A725C4002A970D /* Network-Services */,
 				CD01CD6F232178B2002D0255 /* Pursuit-Core-iOS-Episodes-from-OnlineTests */,
 				CD01CD59232178AF002D0255 /* Products */,
 			);
@@ -86,6 +105,7 @@
 				CD01CD64232178B2002D0255 /* LaunchScreen.storyboard */,
 				CD01CD67232178B2002D0255 /* Info.plist */,
 				0C545C2D23A708B2002A970D /* ShowCell.swift */,
+				0C545C2F23A72443002A970D /* Show.swift */,
 			);
 			path = "Pursuit-Core-iOS-Episodes-from-Online";
 			sourceTree = "<group>";
@@ -202,6 +222,10 @@
 			files = (
 				0C545C2E23A708B2002A970D /* ShowCell.swift in Sources */,
 				CD01CD5E232178AF002D0255 /* ViewController.swift in Sources */,
+				0C545C3723A726BB002A970D /* ShowSearchAPI.swift in Sources */,
+				0C545C3423A725A1002A970D /* AppError.swift in Sources */,
+				0C545C3223A7255B002A970D /* NetworkHelper.swift in Sources */,
+				0C545C3023A72443002A970D /* Show.swift in Sources */,
 				CD01CD5C232178AF002D0255 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

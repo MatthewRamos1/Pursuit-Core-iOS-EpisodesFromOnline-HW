@@ -10,5 +10,10 @@ import UIKit
 
 class ShowCell: UITableViewCell {
 
-  
+    @IBOutlet weak var showView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    func configureCell(show: Show) {
+    
+    }
 }
