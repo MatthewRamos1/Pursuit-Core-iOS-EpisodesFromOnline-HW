@@ -8,6 +8,21 @@
 
 import Foundation
 
-struct Show {
-    
+struct ShowData: Decodable {
+    let show: Show
+}
+
+struct Show: Decodable {
+    let name: String
+    let rating: Rating
+    let image: Image
+}
+
+struct Rating: Decodable {
+    let average: Double
+}
+
+struct Image: Decodable {
+    let medium: String
+    let original: String
 }
