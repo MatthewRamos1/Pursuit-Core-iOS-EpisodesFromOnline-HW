@@ -13,7 +13,7 @@ struct ShowSearchAPI {
     static func fetchShow (searchQuery: String, completion: @escaping (Result<[Show],AppError>) -> ()) {
         
         let searchQuery = searchQuery.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) ?? "girls"
-        let showEndPointURL = "http://api.tvmaze.com/search/shows?q=\(searchQuery)"
+        let showEndPointURL = "https://api.tvmaze.com/search/shows?q=\(searchQuery)"
         
         guard let url = URL(string: showEndPointURL) else {
             completion(.failure(.badURL(showEndPointURL)))

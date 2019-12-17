@@ -13,20 +13,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
     
-    var shows = [Show]()
+    var shows = [Show]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        searchShows(searchQuery: "girls")
         tableView.dataSource = self
+        tableView.delegate = self
+        searchBar.delegate = self
     }
     
     func searchShows(searchQuery: String) {
         ShowSearchAPI.fetchShow(searchQuery: searchQuery, completion: { [weak self] (result) in
             switch result {
             case .failure(let appError):
-                self?.showAlert(title: "Error: Could not read data", message: "\(appError)")
+                DispatchQueue.main.async {
+                    self?.showAlert(title: "Error: Could not read data", message: "\(appError)")
+                }
             case .success(let shows):
-                self?.shows = shows
+                DispatchQueue.main.async {
+                    self?.shows = shows
+                }
             }
             
         })
@@ -41,8 +54,21 @@ extension ViewController: UITableViewDataSource {
         shows.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "showCell", for: indexPath) as? ShowCell else {
+            fatalError("Error: Couldn't pull ShowCell")
+        }
         let show = shows[indexPath.row]
+        cell.configureCell(show: show)
         return cell
     }
+}
+
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 236
+    }
+}
+
+extension ViewController: UISearchBarDelegate {
+    
 }
