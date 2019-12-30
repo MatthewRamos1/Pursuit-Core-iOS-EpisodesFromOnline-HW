@@ -1,8 +1,8 @@
 //
-//  Show.swift
+//  ShowData.swift
 //  Pursuit-Core-iOS-Episodes-from-Online
 //
-//  Created by Matthew Ramos on 12/15/19.
+//  Created by Matthew Ramos on 12/29/19.
 //  Copyright © 2019 Benjamin Stone. All rights reserved.
 //
 
@@ -17,6 +17,7 @@ struct Show: Decodable {
     let name: String
     let rating: Rating
     let image: Image?
+    let id: Int
 }
 
 struct Rating: Decodable {

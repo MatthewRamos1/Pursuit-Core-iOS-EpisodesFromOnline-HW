@@ -30,7 +30,7 @@ class ViewController: UIViewController {
     }
     
     func searchShows(searchQuery: String) {
-        ShowSearchAPI.fetchShow(searchQuery: searchQuery, completion: { [weak self] (result) in
+        ShowSearchAPI.fetchShows(searchQuery: searchQuery, completion: { [weak self] (result) in
             switch result {
             case .failure(let appError):
                 DispatchQueue.main.async {
