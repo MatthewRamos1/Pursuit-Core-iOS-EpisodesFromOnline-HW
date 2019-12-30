@@ -37,9 +37,7 @@ class ViewController: UIViewController {
                     self?.showAlert(title: "Error: Could not read data", message: "\(appError)")
                 }
             case .success(let shows):
-                DispatchQueue.main.async {
-                    self?.shows = shows
-                }
+                self?.shows = shows
             }
             
         })
@@ -70,5 +68,13 @@ extension ViewController: UITableViewDelegate {
 }
 
 extension ViewController: UISearchBarDelegate {
-    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchQuery = searchBar.text else {
+            return
+        }
+        guard !searchQuery.isEmpty else {
+            return
+    }
+        searchShows(searchQuery: searchQuery)
+}
 }

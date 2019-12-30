@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="b7W-80-cwt">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,6 +34,12 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="207" height="236"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Show Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="712-Ny-KL5">
+                                                    <rect key="frame" x="215" y="66.5" width="171" height="21"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M4r-ZX-Ztw">
                                                     <rect key="frame" x="215" y="107.5" width="171" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -42,18 +47,22 @@
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="M4r-ZX-Ztw" firstAttribute="leading" secondItem="ftC-gg-wfV" secondAttribute="trailing" constant="8" id="4qp-qa-ALX"/>
                                                 <constraint firstItem="ftC-gg-wfV" firstAttribute="leading" secondItem="0Sc-cG-FlL" secondAttribute="leading" id="7oL-zd-ZPn"/>
-                                                <constraint firstItem="712-Ny-KL5" firstAttribute="leading" secondItem="ftC-gg-wfV" secondAttribute="trailing" constant="8" id="RWL-lU-krV"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="712-Ny-KL5" secondAttribute="trailing" constant="8" id="Dnj-a5-DhS"/>
                                                 <constraint firstItem="ftC-gg-wfV" firstAttribute="top" secondItem="0Sc-cG-FlL" secondAttribute="top" id="USS-fo-IeH"/>
                                                 <constraint firstAttribute="bottom" secondItem="ftC-gg-wfV" secondAttribute="bottom" id="WAg-Pw-uWr"/>
-                                                <constraint firstItem="712-Ny-KL5" firstAttribute="centerY" secondItem="ftC-gg-wfV" secondAttribute="centerY" id="ZM6-xY-1GW"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="712-Ny-KL5" secondAttribute="trailing" constant="8" id="paC-MY-02Q"/>
+                                                <constraint firstItem="M4r-ZX-Ztw" firstAttribute="centerY" secondItem="ftC-gg-wfV" secondAttribute="centerY" id="XI4-tF-Oku"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="M4r-ZX-Ztw" secondAttribute="trailing" constant="8" id="Ysl-EM-dPM"/>
+                                                <constraint firstItem="M4r-ZX-Ztw" firstAttribute="top" secondItem="712-Ny-KL5" secondAttribute="bottom" constant="20" id="oel-D2-895"/>
+                                                <constraint firstItem="712-Ny-KL5" firstAttribute="leading" secondItem="ftC-gg-wfV" secondAttribute="trailing" constant="8" id="x3o-ha-iRa"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <constraints>
                                             <constraint firstItem="ftC-gg-wfV" firstAttribute="width" secondItem="lRe-3L-rEE" secondAttribute="width" multiplier="0.5" id="e6T-Bj-Uqi"/>
                                         </constraints>
                                         <connections>
+                                            <outlet property="ratingLabel" destination="M4r-ZX-Ztw" id="7Uc-Yx-aVU"/>
                                             <outlet property="showView" destination="ftC-gg-wfV" id="4ET-Ke-cfm"/>
                                             <outlet property="titleLabel" destination="712-Ny-KL5" id="oNI-ss-OhS"/>
                                             <segue destination="zsw-9Y-x4T" kind="show" id="arw-gu-KBA"/>

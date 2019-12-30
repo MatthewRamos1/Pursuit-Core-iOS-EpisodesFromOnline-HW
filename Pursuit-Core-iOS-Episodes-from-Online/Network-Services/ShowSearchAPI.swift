@@ -36,7 +36,5 @@ struct ShowSearchAPI {
                 }
             }
         }
-        
-        
     }
 }
